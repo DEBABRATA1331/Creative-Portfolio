@@ -53,6 +53,19 @@ nav a:hover{color:var(--accent);}
 .skill{background:var(--card);padding:10px 18px;border-radius:20px;transition:.3s;font-size:14px;}
 .skill:hover{background:var(--accent);color:#000;}  
 
+/* SLIDESHOW */
+.slideshow{
+ max-width:800px;
+ margin:0 auto;
+ position:relative;
+}
+.slideshow img{
+ width:100%;
+ border-radius:20px;
+ display:none;
+ box-shadow:0 0 30px rgba(0,229,255,0.2);
+}
+
 .reveal{opacity:0;transform:translateY(40px);transition:1s;}
 .reveal.active{opacity:1;transform:none;}  
 
@@ -71,6 +84,7 @@ footer{background:#06090d;text-align:center;padding:70px 10%;}
 <h3>DEBABRATA</h3>
 <div>
 <a href="#home">Home</a>
+<a href="#slides">Portfolio</a>
 <a href="#about">About</a>
 <a href="#experience">Experience</a>
 <a href="#skills">Skills</a>
@@ -84,6 +98,25 @@ footer{background:#06090d;text-align:center;padding:70px 10%;}
 <h3>Graphic Designer</h3>
 <p>I transform ideas into bold, memorable visuals through clean and strategic design.</p>
 <a href="MY PORTFOLIO.pdf" class="btn btn-outline" download>Download Resume</a>
+</div>
+</section>
+
+<!-- PPT SLIDESHOW SECTION -->
+<section id="slides" class="reveal">
+<h2 style="text-align:center;margin-bottom:40px">Portfolio Slides</h2>
+<div class="slideshow">
+ <img src="images/slide1.jpg">
+ <img src="images/slide2.jpg">
+ <img src="images/slide3.jpg">
+ <img src="images/slide4.jpg">
+ <img src="images/slide5.jpg">
+ <img src="images/slide6.jpg">
+ <img src="images/slide7.jpg">
+ <img src="images/slide8.jpg">
+ <img src="images/slide9.jpg">
+ <img src="images/slide10.jpg">
+ <img src="images/slide11.jpg">
+ <img src="images/slide12.jpg">
 </div>
 </section>
 
@@ -131,6 +164,17 @@ document.addEventListener('mousemove',e=>{
  document.getElementById('cursor').style.left=e.clientX+'px';
  document.getElementById('cursor').style.top=e.clientY+'px';
 });
+
+/* SLIDESHOW */
+let slides=document.querySelectorAll('.slideshow img');
+let slideIndex=0;
+function showSlides(){
+ slides.forEach(s=>s.style.display='none');
+ slides[slideIndex].style.display='block';
+ slideIndex=(slideIndex+1)%slides.length;
+}
+setInterval(showSlides,3000);
+window.addEventListener('load',showSlides);
 
 /* SCROLL REVEAL */
 function revealElements(){
