@@ -3,6 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO -->
+<meta name="description" content="Debabrata Sahoo - Graphic Designer Portfolio. Posters, branding, social media creatives, and visual identity designer.">
+<meta property="og:title" content="Debabrata Sahoo | Graphic Designer">
+<meta property="og:description" content="Creative graphic designer transforming ideas into bold visuals.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="images/1.jpg">
+<link rel="icon" href="images/1.jpg">
+
 <title>Debabrata Sahoo | Graphic Designer</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
@@ -15,62 +24,58 @@
  --muted:#a0a0a0;
 }
 
+.light{
+ --bg:#ffffff;
+ --card:#f1f1f1;
+ --accent:#0077ff;
+ --text:#000000;
+ --muted:#444444;
+}
+
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
 body{background:var(--bg);color:var(--text);scroll-behavior:smooth;cursor:none;}
 a{text-decoration:none;color:inherit;}
 section{padding:90px 10%;}
 h1,h2,h3{font-weight:700;}
-p{color:var(--muted);}
+p{color:var(--muted);}  
 
-/* CUSTOM CURSOR */
-.cursor{
- position:fixed;width:20px;height:20px;border:2px solid var(--accent);
- border-radius:50%;pointer-events:none;transform:translate(-50%,-50%);
- transition:0.1s;z-index:5000;
-}
+/* CURSOR */
+.cursor{position:fixed;width:20px;height:20px;border:2px solid var(--accent);border-radius:50%;pointer-events:none;transform:translate(-50%,-50%);z-index:5000;}
 
 /* NAV */
-nav{position:fixed;top:0;width:100%;background:#0b0f14e6;backdrop-filter:blur(8px);display:flex;justify-content:space-between;padding:18px 10%;z-index:1000;}
-nav a{margin-left:25px;font-size:14px;transition:.3s;}
+nav{position:fixed;top:0;width:100%;background:rgba(0,0,0,0.7);display:flex;justify-content:space-between;padding:18px 10%;z-index:1000;backdrop-filter:blur(8px);}  
+nav a{margin-left:20px;font-size:14px;}  
 nav a:hover{color:var(--accent);}  
 
 /* HERO */
-.hero{min-height:100vh;display:flex;align-items:center;}
-.hero h1{font-size:60px;}
+.hero{min-height:100vh;display:flex;align-items:center;}  
+.hero h1{font-size:60px;}  
 .hero span{color:var(--accent);}  
 
-.btn{display:inline-block;margin-top:30px;padding:12px 32px;border-radius:30px;background:var(--accent);color:#000;font-weight:600;margin-right:15px;transition:.3s;}
-.btn-outline{background:transparent;border:2px solid var(--accent);color:var(--accent);}  
-.btn:hover{transform:scale(1.07);}  
+.btn{display:inline-block;margin-top:30px;padding:12px 32px;border-radius:30px;background:var(--accent);color:#000;font-weight:600;margin-right:10px;}  
+.btn-outline{background:none;border:2px solid var(--accent);color:var(--accent);}  
 
-.about{background:#0f141c;}
+.about{background:var(--card);}  
 
-.timeline{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px;margin-top:40px;}
-.card{background:var(--card);padding:25px;border-radius:16px;transition:.4s;}
-.card:hover{transform:translateY(-10px);}  
+.timeline{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px;margin-top:40px;}  
+.card{background:var(--card);padding:25px;border-radius:16px;}  
 
-.skills-list{display:flex;flex-wrap:wrap;gap:15px;margin-top:25px;}
-.skill{background:var(--card);padding:10px 18px;border-radius:20px;transition:.3s;font-size:14px;}
-.skill:hover{background:var(--accent);color:#000;}  
+.skills-list{display:flex;flex-wrap:wrap;gap:15px;margin-top:25px;}  
+.skill{background:var(--card);padding:10px 18px;border-radius:20px;}  
 
 /* SLIDESHOW */
-.slideshow{
- max-width:800px;
- margin:0 auto;
- position:relative;
-}
-.slideshow img{
- width:100%;
- border-radius:20px;
- display:none;
- box-shadow:0 0 30px rgba(0,229,255,0.2);
-}
+.slideshow{max-width:800px;margin:0 auto;position:relative;text-align:center;}  
+.slideshow img{width:100%;border-radius:20px;display:none;}  
 
-.reveal{opacity:0;transform:translateY(40px);transition:1s;}
+.controls{margin-top:15px;}  
+.controls button{background:var(--accent);border:none;padding:10px 16px;margin:5px;border-radius:50%;font-size:16px;cursor:pointer;}  
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(40px);transition:1s;}  
 .reveal.active{opacity:1;transform:none;}  
 
-footer{background:#06090d;text-align:center;padding:70px 10%;}
-.socials a{margin:0 12px;color:var(--accent);font-size:18px;}  
+footer{text-align:center;padding:70px 10%;background:#06090d;}  
+.socials a{margin:0 10px;color:var(--accent);}  
 
 @media(max-width:768px){body{cursor:auto}.cursor{display:none}.hero h1{font-size:40px;}nav{flex-direction:column;gap:10px;}}
 </style>
@@ -89,6 +94,7 @@ footer{background:#06090d;text-align:center;padding:70px 10%;}
 <a href="#experience">Experience</a>
 <a href="#skills">Skills</a>
 <a href="#contact">Contact</a>
+<button onclick="toggleTheme()">🌓</button>
 </div>
 </nav>
 
@@ -96,34 +102,39 @@ footer{background:#06090d;text-align:center;padding:70px 10%;}
 <div>
 <h1>Hi, I'm <span>Debabrata</span></h1>
 <h3>Graphic Designer</h3>
-<p>I transform ideas into bold, memorable visuals through clean and strategic design.</p>
+<p>I transform ideas into bold, memorable visuals.</p>
 <a href="MY PORTFOLIO.pdf" class="btn btn-outline" download>Download Resume</a>
 </div>
 </section>
 
-<!-- PPT SLIDESHOW SECTION -->
 <section id="slides" class="reveal">
-<h2 style="text-align:center;margin-bottom:40px">Portfolio Slides</h2>
+<h2 style="text-align:center">Portfolio Slides</h2>
 <div class="slideshow">
- <img src="images/1.jpg">
- <img src="images/2.jpg">
- <img src="images/3.jpg">
- <img src="images/4.jpg">
- <img src="images/5.jpg">
- <img src="images/6.jpg">
- <img src="images/7.jpg">
- <img src="images/8.jpg">
- <img src="images/9.jpg">
- <img src="images/10.jpg">
- <img src="images/11.jpg">
- <img src="images/12.jpg">
+<img src="images/1.jpg">
+<img src="images/2.jpg">
+<img src="images/3.jpg">
+<img src="images/4.jpg">
+<img src="images/5.jpg">
+<img src="images/6.jpg">
+<img src="images/7.jpg">
+<img src="images/8.jpg">
+<img src="images/9.jpg">
+<img src="images/10.jpg">
+<img src="images/11.jpg">
+<img src="images/12.jpg">
+
+<div class="controls">
+<button onclick="prevSlide()">◀</button>
+<button onclick="togglePlay()">⏸</button>
+<button onclick="nextSlide()">▶</button>
+</div>
 </div>
 </section>
 
 <section class="about reveal" id="about">
 <h2>Background</h2>
-<p>Led complete visual branding of IEEE VSSUT Student Branch.</p>
-<p>Designed 20+ logos and 250+ creative assets for startups and students.</p>
+<p>Led branding for IEEE VSSUT Student Branch.</p>
+<p>Designed 20+ logos and 250+ creatives.</p>
 </section>
 
 <section id="experience" class="reveal">
@@ -150,41 +161,33 @@ footer{background:#06090d;text-align:center;padding:70px 10%;}
 
 <footer id="contact" class="reveal">
 <h2>Let's Create Something Great Together</h2>
-<p>Not just a designer. A creative force.</p>
 <div class="socials">
-<a href="https://www.instagram.com/dev_1331_?igsh=djNuOTgydjR5Mmxm" target="_blank">Instagram</a>
-<a href="https://www.linkedin.com/in/debabrata-sahoo-ieee1331/" target="_blank">LinkedIn</a>
+<a href="https://www.instagram.com/dev_1331_?igsh=djNuOTgydjR5Mmxm">Instagram</a>
+<a href="https://www.linkedin.com/in/debabrata-sahoo-ieee1331/">LinkedIn</a>
 </div>
-<p style="margin-top:20px">Email: debabratasahoo1331@gmail.com</p>
+<p>Email: debabratasahoo1331@gmail.com</p>
 </footer>
 
 <script>
 /* CURSOR */
-document.addEventListener('mousemove',e=>{
- document.getElementById('cursor').style.left=e.clientX+'px';
- document.getElementById('cursor').style.top=e.clientY+'px';
-});
+document.addEventListener('mousemove',e=>{cursor.style.left=e.clientX+'px';cursor.style.top=e.clientY+'px';});
 
 /* SLIDESHOW */
 let slides=document.querySelectorAll('.slideshow img');
-let slideIndex=0;
-function showSlides(){
- slides.forEach(s=>s.style.display='none');
- slides[slideIndex].style.display='block';
- slideIndex=(slideIndex+1)%slides.length;
-}
-setInterval(showSlides,3000);
-window.addEventListener('load',showSlides);
+let index=0;let playing=true;
+function show(){slides.forEach(s=>s.style.display='none');slides[index].style.display='block';}
+function nextSlide(){index=(index+1)%slides.length;show();}
+function prevSlide(){index=(index-1+slides.length)%slides.length;show();}
+let timer=setInterval(nextSlide,3000);
+function togglePlay(){if(playing){clearInterval(timer);playing=false;}else{timer=setInterval(nextSlide,3000);playing=true;}}
+window.onload=show;
 
-/* SCROLL REVEAL */
-function revealElements(){
- document.querySelectorAll('.reveal').forEach(el=>{
-  let top=el.getBoundingClientRect().top;
-  if(top<window.innerHeight-100) el.classList.add('active');
- });
-}
-window.addEventListener('scroll',revealElements);
-window.addEventListener('load',revealElements);
+/* REVEAL */
+function reveal(){document.querySelectorAll('.reveal').forEach(el=>{if(el.getBoundingClientRect().top<window.innerHeight-100)el.classList.add('active');});}
+window.addEventListener('scroll',reveal);window.addEventListener('load',reveal);
+
+/* THEME */
+function toggleTheme(){document.body.classList.toggle('light');}
 </script>
 
 </body>
