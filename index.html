@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Debabrata Sahoo | Graphic Designer</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+ --bg:#0b0f14;
+ --card:#141b23;
+ --accent:#00e5ff;
+ --text:#ffffff;
+ --muted:#a0a0a0;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{background:var(--bg);color:var(--text);scroll-behavior:smooth;cursor:none;}
+a{text-decoration:none;color:inherit;}
+section{padding:90px 10%;}
+h1,h2,h3{font-weight:700;}
+p{color:var(--muted);}
+
+/* CUSTOM CURSOR */
+.cursor{
+ position:fixed;width:20px;height:20px;border:2px solid var(--accent);
+ border-radius:50%;pointer-events:none;transform:translate(-50%,-50%);
+ transition:0.1s;z-index:5000;
+}
+
+/* NAV */
+nav{position:fixed;top:0;width:100%;background:#0b0f14e6;backdrop-filter:blur(8px);display:flex;justify-content:space-between;padding:18px 10%;z-index:1000;}
+nav a{margin-left:25px;font-size:14px;transition:.3s;}
+nav a:hover{color:var(--accent);}  
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;}
+.hero h1{font-size:60px;}
+.hero span{color:var(--accent);}  
+
+.btn{display:inline-block;margin-top:30px;padding:12px 32px;border-radius:30px;background:var(--accent);color:#000;font-weight:600;margin-right:15px;transition:.3s;}
+.btn-outline{background:transparent;border:2px solid var(--accent);color:var(--accent);}  
+.btn:hover{transform:scale(1.07);}  
+
+.about{background:#0f141c;}
+
+.timeline{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px;margin-top:40px;}
+.card{background:var(--card);padding:25px;border-radius:16px;transition:.4s;}
+.card:hover{transform:translateY(-10px);}  
+
+.skills-list{display:flex;flex-wrap:wrap;gap:15px;margin-top:25px;}
+.skill{background:var(--card);padding:10px 18px;border-radius:20px;transition:.3s;font-size:14px;}
+.skill:hover{background:var(--accent);color:#000;}  
+
+.filters{text-align:center;margin:40px 0 20px;}
+.filters button{
+ background:none;border:2px solid var(--accent);color:var(--accent);
+ padding:8px 20px;border-radius:20px;margin:5px;cursor:pointer;transition:.3s;
+}
+.filters button.active,.filters button:hover{background:var(--accent);color:#000;}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px;}
+.project{position:relative;height:230px;border-radius:15px;overflow:hidden;cursor:pointer;}
+.project img{width:100%;height:100%;object-fit:cover;transition:.6s;}
+.project:hover img{transform:scale(1.15);}  
+.project .overlay{position:absolute;inset:0;background:rgba(0,0,0,.6);display:flex;align-items:center;justify-content:center;opacity:0;transition:.4s;}
+.project:hover .overlay{opacity:1;}  
+
+.lightbox{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;z-index:2000;}
+.lightbox img{max-width:80%;max-height:80%;border-radius:12px;}
+.lightbox span{position:absolute;top:30px;right:40px;font-size:40px;cursor:pointer;color:#fff;}  
+
+.reveal{opacity:0;transform:translateY(40px);transition:1s;}
+.reveal.active{opacity:1;transform:none;}  
+
+footer{background:#06090d;text-align:center;padding:70px 10%;}
+.socials a{margin:0 12px;color:var(--accent);font-size:18px;}  
+
+@media(max-width:768px){body{cursor:auto}.cursor{display:none}.hero h1{font-size:40px;}nav{flex-direction:column;gap:10px;}}
+</style>
+</head>
+
+<body>
+
+<div class="cursor" id="cursor"></div>
+
+<nav>
+<h3>DEBABRATA</h3>
+<div>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#experience">Experience</a>
+<a href="#skills">Skills</a>
+
+<a href="#contact">Contact</a>
+</div>
+</nav>
+
+<section class="hero reveal" id="home">
+<div>
+<h1>Hi, I'm <span>Debabrata</span></h1>
+<h3>Graphic Designer</h3>
+<p>I transform ideas into bold, memorable visuals through clean and strategic design.</p>
+
+<a href="MY PORTFOLIO.pdf" class="btn btn-outline" download>Download Resume</a>
+</div>
+</section>
+
+<section class="about reveal" id="about">
+<h2>Background</h2>
+<p>Led complete visual branding of IEEE VSSUT Student Branch.</p>
+<p>Designed 20+ logos and 250+ creative assets for startups and students.</p>
+</section>
+
+<section id="experience" class="reveal">
+<h2>Experience</h2>
+<div class="timeline">
+<div class="card">IEEE VSSUT Student Branch<br>Graphic Design Head<br>2020–Now</div>
+<div class="card">Freelance Designer<br>2022–2024</div>
+<div class="card">Student Global Summit<br>Graphic Designer<br>2024–2025</div>
+</div>
+</section>
+
+<section class="about reveal" id="skills">
+<h2>Skills</h2>
+<div class="skills-list">
+<div class="skill">Canva</div>
+<div class="skill">Figma</div>
+<div class="skill">Illustrator</div>
+<div class="skill">Branding</div>
+<div class="skill">Posters</div>
+<div class="skill">Social Media</div>
+<div class="skill">Typography</div>
+</div>
+</section>
+
+
+
+
+
+<footer id="contact" class="reveal">
+<h2>Let's Create Something Great Together</h2>
+<p>Not just a designer. A creative force.</p>
+<div class="socials">
+<a href="https://www.instagram.com/dev_1331_?igsh=djNuOTgydjR5Mmxm" target="_blank">Instagram</a>
+<a href="https://www.linkedin.com/in/debabrata-sahoo-ieee1331/" target="_blank">LinkedIn</a>
+</div>
+<p style="margin-top:20px">Email: debabratasahoo1331@gmail.com</p>
+</footer>
+
+<script>
+/* CURSOR */
+document.addEventListener('mousemove',e=>{
+ document.getElementById('cursor').style.left=e.clientX+'px';
+ document.getElementById('cursor').style.top=e.clientY+'px';
+});
+
+/* LIGHTBOX */
+function openLightbox(el){
+ document.getElementById('lightbox').style.display='flex';
+ document.getElementById('lightbox-img').src=el.querySelector('img').src;
+}
+function closeLightbox(){document.getElementById('lightbox').style.display='none';}
+
+/* FILTER */
+function filterProjects(cat){
+ let btns=document.querySelectorAll('.filters button');
+ btns.forEach(b=>b.classList.remove('active'));
+ event.target.classList.add('active');
+ let items=document.querySelectorAll('.project');
+ items.forEach(i=>{
+  if(cat==='all'||i.classList.contains(cat)) i.style.display='block';
+  else i.style.display='none';
+ });
+}
+
+/* SCROLL REVEAL */
+function revealElements(){
+ document.querySelectorAll('.reveal').forEach(el=>{
+  let top=el.getBoundingClientRect().top;
+  if(top<window.innerHeight-100) el.classList.add('active');
+ });
+}
+window.addEventListener('scroll',revealElements);
+window.addEventListener('load',revealElements);
+});
+</script>
+
+</body>
+</html>
